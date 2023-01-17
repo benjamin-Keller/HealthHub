@@ -1,5 +1,5 @@
 using HealthHub.Server.Data;
-using HealthHub.Server.Models;
+using HealthHub.Shared;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
