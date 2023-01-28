@@ -1,0 +1,22 @@
+﻿@page "/users/add"
+<MudCard Class="p-3">
+    <EditForm Model="@model" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="6">
+                <MudTextField Label="First name" @bind-Value="model.FirstName" For="@(() => model.FirstName)" />
+                <MudTextField Label="Second name" HelperText="(optional)" @bind-Value="model.SecondName" For="@(() => model.SecondName)" />
+                <MudTextField Label="Last name" @bind-Value="model.LastName" For="@(() => model.LastName)" />
+            </MudItem>
+            <MudItem xs="12" sm="6">
+                <MudTextField Label="ID Number" @bind-Value="model.IdNumber" For="@(() => model.IdNumber)" />
+                <MudTextField Label="Phone Number" HelperText="(optional)" @bind-Value="model.PhoneNumber" For="@(() => model.PhoneNumber)" />
+                <MudTextField Label="Email" @bind-Value="model.Email" For="@(() => model.Email)" />
+            </MudItem>
+            <MudItem xs="12" Class="d-flex justify-content-end">
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary">Register</MudButton>
+            </MudItem>
+        </MudGrid>
+    </EditForm>
+</MudCard>
+
