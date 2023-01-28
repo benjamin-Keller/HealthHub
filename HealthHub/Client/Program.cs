@@ -1,4 +1,5 @@
 using HealthHub.Client;
+using HealthHub.Client.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -13,6 +14,7 @@ builder.Services.AddHttpClient("HealthHub.ServerAPI", client => client.BaseAddre
 
 // Supply HttpClient instances that include access tokens when making requests to the server project
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("HealthHub.ServerAPI"));
+builder.Services.AddTransient<AuthService>();
 builder.Services.AddMudServices();
 
 builder.Services.AddApiAuthorization();
